@@ -25,6 +25,10 @@
     margin-bottom: 80px;
 }
 
+.steps span {
+    font-size: 38px;
+}
+
 .steps img {
     width: 15%;
     margin: 10px 0;
