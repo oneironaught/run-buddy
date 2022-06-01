@@ -15,9 +15,6 @@ https://lernantino.github.io/run-buddy/
 
 
 ## Contribution
-<<<<<<< HEAD
-Made with ❤️ by Robert Ruelas
-=======
 Made with ❤️ by Robert Ruelas
 
 
