@@ -16,3 +16,6 @@ https://lernantino.github.io/run-buddy/
 
 ## Contribution
 Made with ❤️ by Robert Ruelas
+
+
+### ©2019 Run Buddy, Inc
