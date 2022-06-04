@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  :root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  }
   
   body {
     /* alphanumerical value */
@@ -10,13 +16,24 @@
     font-family: Helvetica, Arial, sans-serif;
   }
   
-  /* apply styles to <header> */
+  /* apply styles to <header> / Nav bar styles */
   header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 35px;
     background-color: #39a6b2;
+<<<<<<< HEAD
+    z-index: 9999;
+=======
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+>>>>>>> feature/aesthetics
   }
   
   header h1 {
@@ -24,6 +41,7 @@
     margin: 0;
     font-size: 36px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   header a {
@@ -47,8 +65,17 @@
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
   }
   
+  /* Footer Styles start */
   footer {
     background: #fce138;
     display: flex;
@@ -66,13 +93,14 @@
   
   footer div {
     line-height: 1.5;
-    text-align: left;
+    text-align: right;
   }
   
   footer a {
     color: #024e76;
   }
   
+  /* Style all section tags */
   section {
     padding: 60px;
   }
@@ -81,7 +109,8 @@
   .hero {
     background-image: url(../images/hero-bg.jpeg);
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -101,17 +130,78 @@
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
-
-  /* Hero Style End */
   
   .hero-form {
     border: 3px solid #024e76;
-    background-color: #fce138;
+    border-radius: 15px;
+    background-color: rgba(225, 225, 56, 0.8);
     width: 40%;
     margin: 3.5%;
     padding: 20px;
     color: #024e76;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-form button:hover {
+    background-color: #39a6b2;
+  }
+
+  .radio-wrapper label::before {
+    border-radius: 50%;
+  }
+
+  .radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #024e76;
+    background-image: radial-gradient(circle, #39a6b2, #024e76);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+  }
+
+  .checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+  }
+
+  .checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #024e76;
+    position: absolute;
+    top: -4px;
+    left: -30px;
+  }
+
+  .checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid #024e76;
+    border-bottom: 2px solid #024e76;
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+  }
+
+  .checkbox-wrapper input + label::after,
+  .radio-wrapper input + label::after {
+    content: none;
+  }
+
+  .checkbox-wrapper input:checked + label::after,
+  .radio-wrapper input:checked + label::after {
+    content: "";
   }
   
   .hero-form h3 {
@@ -124,12 +214,19 @@
   
   .form-input {
     border: 1px solid #024e76;
+    border-radius: 10px;
     display: block;
     padding: 7px 15px;
     font-size: 16px;
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
+  .form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
   }
   
   .hero-form label {
@@ -140,10 +237,31 @@
     color: #fce138;
     background-color: #024e76;
     border: none;
+    border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;
   }
+
+  /* Section Title Styles Start */
+  .section-title {
+    font-size: 48px;
+    border-bottom: 3px solid;
+    color: #024e76;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
+  }
   
+  .primary-border {
+    border-color: #fce138;
+  }
+  
+  .secondary-border {
+    border-color: #39a6b2;
+  }
+  
+  /*What We Do styles */
   .intro p {
     line-height: 1.7;
     color: #39a6b2;
@@ -153,8 +271,24 @@
     text-align: center;
   }
   
+  /*What You Do Styles */
   .steps {
     background: #fce138;
+  }
+
+  .step:last-child {
+    border-bottom: none;
+  }
+
+  .steps h3 {
+    color: #024e76;
+    font-size: 46px;
+    margin-top: 10px;
+  }
+
+  .steps p {
+    color: #39a6b2;
+    font-size: 23px;
   }
 
   .step {
@@ -205,24 +339,6 @@
     align-items: center;
   }
 
-  .section-title {
-    font-size: 48px;
-    padding-bottom: 20px;
-    text-align: center;
-    margin: 0 auto 35px auto;
-    width: 50%;
-    color: #024e76;
-    border-bottom: 3px solid;
-  }
-  
-  .primary-border {
-    border-color: #fce138;
-  }
-  
-  .secondary-border {
-    border-color: #39a6b2;
-  }
-
   /* Meet The Trainers start */
   .trainers {
     width: 100%;
@@ -262,18 +378,6 @@
     font-size: 17px;
   }
   
-  .text-left {
-    text-align: left;
-  }
-  
-  .text-right {
-    text-align: right;
-  }
-
-  .flex-row {
-    display: flex;
-  }
-  
   /* REACH OUT STYLES START */
   .contact {
     background: #024e76;
@@ -287,6 +391,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+  .contact-info > * {
+    flex: 1;
+    margin: 15px;
   }
 
   .contact-info iframe {
@@ -311,6 +420,7 @@
 
   .contact-form input, .contact-form textarea {
     border: 1px solid #024e76;
+    border-radius: 10px;
     display: block;
     padding: 7px 15px;
     font-size: 16px;
@@ -318,16 +428,28 @@
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
+  .contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
   }
 
   .contact-form button {
     width: 100%;
     border: none;
+    border-radius: 10px;
     background: #fce138;
     color: #024e76;
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+  }
+
+  .contact-form button:hover {
+    color: #fce138;
+    background-color: #39a6b2;
   }
   
   .contact-info a {
@@ -335,12 +457,27 @@
   }
   
   /* REACH OUT STYLES END */
+
+  /* Utilities */
+
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .flex-row {
+    display: flex;
+  }
   
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
   @media screen and (max-width: 980px) {
     header {
       padding-bottom: 0;
       justify-content: center;
+      position: relative;
     }
 
     header h1 {
@@ -356,6 +493,13 @@
 
     header nav ul li a {
       font-size: 20px;
+    }
+
+    header nav ul li a:hover {
+      background: #fce138;
+      color: #024e76;
+      border-radius: 15px;
+      text-shadow: none;
     }
 
     footer h2, footer div {
